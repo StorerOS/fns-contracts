@@ -1,0 +1,718 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					}
+				],
+				"name": "isApprovedForAll",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "node",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "label",
+						"type": "bytes32"
+					}
+				],
+				"name": "namehash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "node",
+						"type": "bytes32"
+					}
+				],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "node",
+						"type": "bytes32"
+					}
+				],
+				"name": "recordExists",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "node",
+						"type": "bytes32"
+					}
+				],
+				"name": "resolver",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "setApprovalForAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "node",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "setOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "node",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "resolver",
+						"type": "address"
+					},
+					{
+						"internalType": "uint64",
+						"name": "ttl",
+						"type": "uint64"
+					}
+				],
+				"name": "setRecord",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "node",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "resolver",
+						"type": "address"
+					}
+				],
+				"name": "setResolver",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "node",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "label",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "setSubnodeOwner",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "node",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "label",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "resolver",
+						"type": "address"
+					},
+					{
+						"internalType": "uint64",
+						"name": "ttl",
+						"type": "uint64"
+					}
+				],
+				"name": "setSubnodeRecord",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "node",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint64",
+						"name": "ttl",
+						"type": "uint64"
+					}
+				],
+				"name": "setTTL",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "node",
+						"type": "bytes32"
+					}
+				],
+				"name": "ttl",
+				"outputs": [
+					{
+						"internalType": "uint64",
+						"name": "",
+						"type": "uint64"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"isApprovedForAll(address,address)": {
+					"details": "Query if an address is an authorized operator for another address.",
+					"params": {
+						"operator": "The address that acts on behalf of the owner.",
+						"owner": "The address that owns the records."
+					},
+					"returns": {
+						"_0": "True if `operator` is an approved operator for `owner`, false otherwise."
+					}
+				},
+				"owner(bytes32)": {
+					"details": "Returns the address that owns the specified node.",
+					"params": {
+						"node": "The specified node."
+					},
+					"returns": {
+						"_0": "address of the owner."
+					}
+				},
+				"recordExists(bytes32)": {
+					"details": "Returns whether a record has been imported to the registry.",
+					"params": {
+						"node": "The specified node."
+					},
+					"returns": {
+						"_0": "Bool if record exists"
+					}
+				},
+				"resolver(bytes32)": {
+					"details": "Returns the address of the resolver for the specified node.",
+					"params": {
+						"node": "The specified node."
+					},
+					"returns": {
+						"_0": "address of the resolver."
+					}
+				},
+				"setApprovalForAll(address,bool)": {
+					"details": "Enable or disable approval for a third party (\"operator\") to manage  all of `msg.sender`'s ENS records. Emits the ApprovalForAll event.",
+					"params": {
+						"approved": "True if the operator is approved, false to revoke approval.",
+						"operator": "Address to add to the set of authorized operators."
+					}
+				},
+				"setOwner(bytes32,address)": {
+					"details": "Transfers ownership of a node to a new address. May only be called by the current owner of the node.",
+					"params": {
+						"node": "The node to transfer ownership of.",
+						"owner": "The address of the new owner."
+					}
+				},
+				"setRecord(bytes32,address,address,uint64)": {
+					"details": "Sets the record for a node.",
+					"params": {
+						"node": "The node to update.",
+						"owner": "The address of the new owner.",
+						"resolver": "The address of the resolver.",
+						"ttl": "The TTL in seconds."
+					}
+				},
+				"setResolver(bytes32,address)": {
+					"details": "Sets the resolver address for the specified node.",
+					"params": {
+						"node": "The node to update.",
+						"resolver": "The address of the resolver."
+					}
+				},
+				"setSubnodeOwner(bytes32,bytes32,address)": {
+					"details": "Transfers ownership of a subnode keccak256(node, label) to a new address. May only be called by the owner of the parent node.",
+					"params": {
+						"label": "The hash of the label specifying the subnode.",
+						"node": "The parent node.",
+						"owner": "The address of the new owner."
+					}
+				},
+				"setSubnodeRecord(bytes32,bytes32,address,address,uint64)": {
+					"details": "Sets the record for a subnode.",
+					"params": {
+						"label": "The hash of the label specifying the subnode.",
+						"node": "The parent node.",
+						"owner": "The address of the new owner.",
+						"resolver": "The address of the resolver.",
+						"ttl": "The TTL in seconds."
+					}
+				},
+				"setTTL(bytes32,uint64)": {
+					"details": "Sets the TTL for the specified node.",
+					"params": {
+						"node": "The node to update.",
+						"ttl": "The TTL in seconds."
+					}
+				},
+				"ttl(bytes32)": {
+					"details": "Returns the TTL of a node, and any records associated with it.",
+					"params": {
+						"node": "The specified node."
+					},
+					"returns": {
+						"_0": "ttl of the node."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ENSDeployer.sol": "ENSDeployer"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@ensdomains/buffer/contracts/Buffer.sol": {
+			"keccak256": "0xd6dd3b0b327288f8e1b711a609f4040fea602e2ad4bba9febdf2f33b4e56eb0c",
+			"license": "BSD-2-Clause",
+			"urls": [
+				"bzz-raw://78a722152d40d778a97595e5224fac1d138f4e659dcb1a926148909ef4c4bdca",
+				"dweb:/ipfs/QmRxScF53x5ywsChLNpMUCdg2TSoCWTfo8G65Mo3sGY55b"
+			]
+		},
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2",
+				"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+			"keccak256": "0xd10975de010d89fd1c78dc5e8a9a7e7f496198085c151648f20cba166b32582b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fb0048dee081f6fffa5f74afc3fb328483c2a30504e94a0ddd2a5114d731ec4d",
+				"dweb:/ipfs/QmZptt1nmYoA5SgjwnSgWqgUSDgm4q52Yos3xhnMv3MV43"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f",
+				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
+			]
+		},
+		"ENSDeployer.sol": {
+			"keccak256": "0x7164ab64e72f35e0ed513ed488110569ddc3bf8c55f2d3a49192f735933aeae6",
+			"urls": [
+				"bzz-raw://42bf0ea2f1c2901748c837024a878705f7458bc35517c8b8e2a5fb586e466252",
+				"dweb:/ipfs/QmcqKqu9c26Vjxc5EDuBdLejzKHvMA3nvyoUNPDLMbWcTR"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/dnssec-oracle/BytesUtils.sol": {
+			"keccak256": "0x2503ba31d9395e7a8593668473ade6c2d568851a1595fd456c5dd75b2f5653f7",
+			"urls": [
+				"bzz-raw://653c7e98434904e806b00aa3524ef230cb6a6f959a7092dc0ea448b484d9d2f4",
+				"dweb:/ipfs/QmWsQ5AK6F4ftn8TKQjnLdEhGnLDCjhrZ9YA8njxuzd8gL"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/dnssec-oracle/RRUtils.sol": {
+			"keccak256": "0xdc0c11afdec52d00ebd72c62f062e1f84da60868c7350ffffb85918b10974a54",
+			"urls": [
+				"bzz-raw://17a9c0521623598f23e71e44370032279d65705b4c8f8248c23f4b78f2836b4f",
+				"dweb:/ipfs/QmUKMw77yx7kXTa1HsewDnuc8W1u86A4R6kXFsb7Vjxrq6"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/registry/ENS.sol": {
+			"keccak256": "0xf79be82c1a2eb0a77fba4e0972221912e803309081ca460fd2cf61653e55758a",
+			"urls": [
+				"bzz-raw://48ccbbafe4b0b04b4d44111b2487a4ccf75eeccb861f5259f3a7648ce373823b",
+				"dweb:/ipfs/QmRfnxzd48J7XmwrdbynQqKFZt9EpHVnKm1ePGBkAbK7qz"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/registry/ENSRegistry.sol": {
+			"keccak256": "0x047874111ed16d3add08a3bf6323012655e22685b8007eab45f51a074ae5793a",
+			"urls": [
+				"bzz-raw://34411fb74d82c2b9f36b1bdea9c9f3e38695dff5b84e7763cd44e308d1ceabe1",
+				"dweb:/ipfs/QmcYuvPoX8VD6W2XBdNPZaag61s8BhWWrLGSZuZW3Sd3HY"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/registry/FIFSRegistrar.sol": {
+			"keccak256": "0x5af9df8e33403ea1d14deb8dc5494af079e59e4cc03dcde92a9ae4bfe67b2e9f",
+			"urls": [
+				"bzz-raw://7ebbddd8ec632a1b111cbb83b12c2460aab9442ee6a4b958afcdb7d03a3e73e1",
+				"dweb:/ipfs/QmWBGmANC72dA1iJf37aJ227WAzrSpaaf2yBzxPD91f2Aj"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/registry/IReverseRegistrar.sol": {
+			"keccak256": "0xd6ba83973ffbab31dec17a716af3bb5703844d16dceb5078583fb2c509f8bcc2",
+			"urls": [
+				"bzz-raw://5558a9da204b26e77ca1e1bf85a4d13bcd1b01ee7327b301401902af0ebba4e0",
+				"dweb:/ipfs/QmNxDyCneienSryfmS8j63vYdj4A4gbjRMp1t73Xkgygxe"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/registry/ReverseRegistrar.sol": {
+			"keccak256": "0x4430930561750d2de1163f7b7ba22ae003a7684394371e90a04374859a2337cf",
+			"urls": [
+				"bzz-raw://bda5413da4a84e8b013e921b584f59e1030319ed21ff5ddd41e0fb88936ed9c2",
+				"dweb:/ipfs/QmdBvavbkpB9urMDJ7imVDst1VHXw7BtQWMcgzbPNRqo4a"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/IMulticallable.sol": {
+			"keccak256": "0x78b9070106d539e070dde613caaa03522143ab55c206a2efd5664c9da783741a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f86fc19dbb305aa2cff54392ac85704b7b2f1de687ae756356b406fa47c7e000",
+				"dweb:/ipfs/QmRxi1U6Po3Fh4owKrcuZQmKB53pYBzegnpBMQyGqbFXEP"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/Multicallable.sol": {
+			"keccak256": "0x0232b14c50b5c8bef0777fa8c130228a6a2c10b27f9be08760d40a44fd8823e9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://864f8296362040ccdd465e258c98bc6e6973135ab456fef2a6a22ae65e9383f5",
+				"dweb:/ipfs/QmP6aSNsHUHCBQfmqe8FZMtqdRzVqerDmossWt3dmPhBm9"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/PublicResolver.sol": {
+			"keccak256": "0x69ecc7f25b54dbb178b34bfdc044a702fee482c2775da974edc90c64659cb89c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cfd6ac42894212f0ed9ea4acb5af2955a8d116f7d5c0e384ede9d389af0523bf",
+				"dweb:/ipfs/QmVj2SHfoWoVv8Paf5DcaXF4hAyXSXWB1AVUjwqChCXPog"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/ResolverBase.sol": {
+			"keccak256": "0x99887f8890c62800bfe702dd67e36453a7017f05a368017c1187366bd98bc0a6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a24ea0e0185dc441bdaece57cda4e810b5546bb1ba0e598b7b51d5e1d68e7f5c",
+				"dweb:/ipfs/QmYNMfqyPuZq25a33SLSFpf9CXaqZf1ni9puxA7j3DrGEf"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/ABIResolver.sol": {
+			"keccak256": "0x8f6fc2c3aeb2eee665ae4b2db8efe137869509a2fba4ec3dfd381257e64c82c4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e3739f679db391cbacdf616d3c9e5ea10bc6b264743ffc3de38a24911b18fc89",
+				"dweb:/ipfs/QmVF1RoWXXq8pqZzKHo1G9yHiCHoKjH8U3Rjjf2E4bTqcV"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/AddrResolver.sol": {
+			"keccak256": "0xd646c5d83209db92099b84effe8ab19bb9fccb95c25b2984e2d217c70eeccbf3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://599f8424148eb7922b5c2c55ca1dbee306cbf732095377835cce8cf041102fa4",
+				"dweb:/ipfs/QmZqfwAwZcpkJn2DauyQE644bzRCcB59cxNVni7tSq6nLr"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/ContentHashResolver.sol": {
+			"keccak256": "0x51997248aa9b178ce3fcc708ede901f02f1613091743bc91adeb0b3c42600f14",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e8dc468f7f604c40392a76eb1ad6459621f18cf7bf02734f5631a91edff6a1f6",
+				"dweb:/ipfs/QmNTJmzebTxPU5K1B4b6evxzUebhkzP1xd6ePz5th62fTw"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/DNSResolver.sol": {
+			"keccak256": "0x018591569fae9070357135a943958592f9e3bde5092e81ed234e47db9ee54d16",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1e7f667592a77f4798816d7828f02f15ad267db9be6a8d67dd248e1845530dec",
+				"dweb:/ipfs/QmWUQNYKTsZdXMzNAZu1uDcVpcTJxNtS5pfT1mtVawRSp9"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/IABIResolver.sol": {
+			"keccak256": "0xc6db25d9b07ea925c64bb777f00ba557e99fbccd4c30c20e5a1b5cd8c159dcbf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://acf8276fac3d5e1f04bfc59b8cc2178f6ae1b6926ec0056debf6e4a6b4802241",
+				"dweb:/ipfs/QmZX9HMFZVB8Z7qvLNNPt39Pfom3AxXdCaKoNAsmBrohJT"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/IAddrResolver.sol": {
+			"keccak256": "0x2ad7f2fc60ebe0f93745fe70247f6a854f66af732483fda2a3c5e055614445e8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://43922ba183ff20d87dce7fc5d715e626b26594151e36dcc8d7c6329b9a822963",
+				"dweb:/ipfs/QmTg9uHTugTxzqddN68gnhNbGt4bGJBS9mQcss6GYggR4X"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/IAddressResolver.sol": {
+			"keccak256": "0x37221203e063dee5aa2a067a6ab3401e9cca41cce5b15230994b6ea377f05ed5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://36d63a2c5b16117f0a38b43bd033b044b601388077762ef7990259096b9e00d3",
+				"dweb:/ipfs/QmRmW5Vzny32u6U2jZy6NWrzvtA5vpijrTa82pRv57mZkv"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/IContentHashResolver.sol": {
+			"keccak256": "0xd95cd77684ba5752c428d7dceb4ecc6506ac94f4fbb910489637eb68dcd8e366",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://daf1fee7770679bd935b8b5686789a4ecc532caeef5a9b8e1b60ae0c285e743e",
+				"dweb:/ipfs/QmSaHBAqtDdbQLH6QN4EbupMrq2ah8g6fqE7fLX1u4cjMZ"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/IDNSRecordResolver.sol": {
+			"keccak256": "0xcfa52200edd337f2c6c5bf402352600584da033b21323603e53de33051a3e25d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2c8355211d58db82660140191678ee342eb8a7ac46fa097ae8e03eef008f592e",
+				"dweb:/ipfs/QmYDNiECPd4fJ7Vk9Xywfpg73rUvDpcYqas95ofGcpt7fM"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/IDNSZoneResolver.sol": {
+			"keccak256": "0xca1b3a16e7005533f2800a3e66fcdccf7c574deac7913d8c810f40aec1d58dc0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a4e38d5eb69e236c37e4a013628838070720c9e1923569650b01252868038c7a",
+				"dweb:/ipfs/QmV397iZMRxtem79kJy5sueJadXoVL89gNViX2xciQHUrk"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/IInterfaceResolver.sol": {
+			"keccak256": "0x6d75d6010016684030e13711b3bc1a4e1a784c7398937f1b7c2b2f328f962c2b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9a7e9d70ca1828b5757a02037ff593c96b99f945704ca95848d1e5d68f3ffdc7",
+				"dweb:/ipfs/QmV13iffwr38SV3h1VqK3MSzAp2PThGPxK8h81HrhMZQGH"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/INameResolver.sol": {
+			"keccak256": "0x9ec392b612447b1acbdc01114f2da2837a658d3f3157f60a99c5269f0b623346",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5b2cd9e5339b09f40e82bd91fed7d5f643dd031393eefb9aec588eaba8465049",
+				"dweb:/ipfs/QmT2A8eswhJU9YadCs9BtwKNj6YGypntXmFepANQYyGw7x"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/IPubkeyResolver.sol": {
+			"keccak256": "0x69748947093dd2fda9ddcebd0adf19a6d1e7600df1d4b1462a0417156caddca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bc2f86e50bd17c38fb10feb577d88d8970c585017a391ef10e3aaa3d50f81555",
+				"dweb:/ipfs/QmaxLx2pqCUxf9W2dusfviZ9aSiTuVwuekGo73rjvmGifE"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/ITextResolver.sol": {
+			"keccak256": "0xcc5eada60de63f42f47a4bbc8a5d2bed4cd1394646197a08da7957c6fd90ba5d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b7ac2332cf9e25464ca13f6fe638882d8fac529e3ef88b0e4049103d175f3141",
+				"dweb:/ipfs/QmQpNmeCJT433DZqzAP97a3GEDT2EM5wT2u2BpoDnhXtv2"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/IVersionableResolver.sol": {
+			"keccak256": "0xd0d09596f20c57bafb2ffa8521a8c57120e9af6c6b194f9c689d4da56f91a57c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3e78ca35813a5eb02e6e61ad49102dfccd219ff7f9a81e54783582be2af1a0c0",
+				"dweb:/ipfs/QmaCb9Bv9FnKMd6TVXsjhchq1F7ZdsSpLrqDhPYgp8j2qV"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/InterfaceResolver.sol": {
+			"keccak256": "0x3daeadb9196264d907ef62b4d615fb1aae8ec3552293ae0004c3e39b5533e70f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fb171162f2a2298e3fd2f16ebc7452d8786e76fad3093d16c7075c9be51900bf",
+				"dweb:/ipfs/QmTJarodc88xMdXdQpgxAVEUsigNx6TAAjY3cwnWtVj7N8"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/NameResolver.sol": {
+			"keccak256": "0xaa9acf9a857d791d8e3ecb3b962addc7c6a54a9bf4cdd429bb77f075d384486f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://44c97e4d12bf656c3d522223928cfc981388c8f614514f2396089d4a9ff075c0",
+				"dweb:/ipfs/QmVF69rX7P4uxpiowLhwijBoxkgP8W9zSzhYAZ27yUZU1r"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/PubkeyResolver.sol": {
+			"keccak256": "0x3b7b2e3b59874bacd585928af1b15978f900df4c87fd265510db184623e35546",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d07a832cd37de9d4ae8905f70f136ee17f07deed053890982c805fd60eafc549",
+				"dweb:/ipfs/QmYhx622oY53k6iq69rBHm9ssggHCjg3QLn9RiZjtcu81k"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/TextResolver.sol": {
+			"keccak256": "0x3a52fa55967f964206fdefe61461f505bcdfa23264ef28da648c34a9c98081c1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://694337bfc8b132e56f152d4accf01125e7fb7751f3533c381e353d599a9c3239",
+				"dweb:/ipfs/QmUhr2rUJGvnnMfMpjTWveNPFNtUiN8pjJfdf5HTHq1TLe"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/root/Controllable.sol": {
+			"keccak256": "0xb19b8c0fafe9ca2b4bf8aaafee486fa31437672e1e1977bdf84bfe03464969db",
+			"urls": [
+				"bzz-raw://cd365d76a131b89fa0f6b4097e63032337d2c071c082f5b9ca4af85cd16b3350",
+				"dweb:/ipfs/QmXcgvgArVaK9k4wfzEj2rGu86W6U3BAY8mw8jVaAwJpFH"
+			]
+		}
+	},
+	"version": 1
+}
