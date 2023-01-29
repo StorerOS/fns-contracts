@@ -6,11 +6,13 @@ import (
 	"fns-controller/fns"
 	"git.storeros.com/storeros/bcos-sdk/client"
 	"git.storeros.com/storeros/bcos-sdk/conf"
+	"git.storeros.com/storeros/bcos-sdk/core/types"
 	"git.storeros.com/storeros/bcos-sdk/utils"
 	"github.com/civet148/log"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/urfave/cli/v2"
+	"math/big"
 	"os"
 	"os/signal"
 )
@@ -26,14 +28,14 @@ var (
 )
 
 const (
-	CmdNameDeploy   = "deploy"
+	CmdNameDeploy = "deploy"
 )
 
 const (
-	CmdFlagNodeUrl      = "node-url"
-	CmdFlagChainID      = "chain-id"
-	CmdFlagGroupID      = "group-id"
-	CmdFlagContractAddr = "contract-addr"
+	CmdFlagNodeUrl      = "node-url"      //BCOS node url
+	CmdFlagChainID      = "chain-id"      //BCOS chain id
+	CmdFlagGroupID      = "group-id"      //BCOS group id
+	CmdFlagContractAddr = "contract-addr" // contract address to test
 )
 
 const (
@@ -85,7 +87,7 @@ func main() {
 	}
 	app := &cli.App{
 		Name:     ProgramName,
-		Usage:    "ENS contract deploy and operate",
+		Usage:    "FNS contract deployer",
 		Version:  fmt.Sprintf("v%s %s commit %s", Version, BuildTime, GitCommit),
 		Flags:    []cli.Flag{},
 		Commands: local,
@@ -101,8 +103,7 @@ func main() {
 	}
 }
 
-
-func newHttpClient(cctx *cli.Context, addr string) (*client.Client, error) {
+func newBcosClient(cctx *cli.Context, addr string) (*client.Client, error) {
 
 	var singer = &Signer{}
 	var config = &conf.Config{
@@ -142,7 +143,6 @@ func (s *Signer) Sign(addr common.Address, hash []byte) (signature []byte, err e
 	return
 }
 
-
 var deployCmd = &cli.Command{
 	Name:      CmdNameDeploy,
 	Usage:     "contract deployer",
@@ -165,7 +165,7 @@ var deployCmd = &cli.Command{
 		},
 	},
 	Action: func(cctx *cli.Context) error {
-		client, err := newHttpClient(cctx, ownerAddress)
+		client, err := newBcosClient(cctx, ownerAddress)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -181,8 +181,10 @@ var deployCmd = &cli.Command{
 		//	log.Errorf(err.Error())
 		//	return err
 		//}
-		callOpt := client.GetCallOpts(); _ = callOpt
-		transactOpt := client.GetTransactOpts(); _ = transactOpt
+		callOpt := client.GetCallOpts()
+		_ = callOpt
+		transactOpt := client.GetTransactOpts()
+		_ = transactOpt
 
 		//FISCO-BCOS deploy
 		addr, tx, svc, err := fns.DeployFns(transactOpt, client)
@@ -193,23 +195,22 @@ var deployCmd = &cli.Command{
 		_ = svc
 		log.Infof("contract address: %s", addr.Hex()) // the address should be saved
 		log.Infof("contract deploy tx hash: %s", tx.Hash().Hex())
-		//var strLabel = "libin"
-		//labelHash, err := svc.Makelabel(callOpt, strLabel)
-		//if err != nil {
-		//	log.Errorf("register error [%s]", err)
-		//	return err
-		//}
-		////register
-		//tx, receipt, err := svc.Register(transactOpt, labelHash, oa)
-		//if err != nil {
-		//	log.Errorf("register error [%s]", err)
-		//	return err
-		//}
-		//if receipt.Status != types.Success {
-		//	return log.Errorf("register receipt status [%v] message [%s]", receipt.Status, receipt.GetErrorMessage())
-		//}
-		//log.Infof("register 2LD label [%s] to [%s] ok, tx hash [%s]", strLabel, oa.String(), tx.Hash().String())
-		//
+
+		var secret [32]byte
+		var strSubDomain = "libin" //libin.fil
+		secret, err = svc.Keccak(callOpt, "123456")
+		strSecret := hex.EncodeToString(secret[:])
+		log.Infof("secret: %s", strSecret)
+		tx, receipt, err := svc.Register(transactOpt, strSubDomain, oa, big.NewInt(365*86400), secret)
+		if err != nil {
+			log.Errorf("register error [%s]", err)
+			return err
+		}
+		if receipt.Status != types.Success {
+			return log.Errorf("register receipt status [%v] message [%s]", receipt.Status, receipt.GetErrorMessage())
+		}
+		log.Infof("register 2LD domain [%s] to [%s] ok, tx hash [%s]", strSubDomain, oa.String(), tx.Hash().String())
+
 		//var rootNode, subnode [32]byte
 		//var owner common.Address
 		//rootNode, err = svc.RootNode(callOpt)
