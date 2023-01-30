@@ -44,7 +44,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "NameRegistered",
+				"name": "FnsNameRegistered",
 				"type": "event"
 			},
 			{
@@ -75,7 +75,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "NameRenewed",
+				"name": "FnsNameRenewed",
 				"type": "event"
 			},
 			{
@@ -88,7 +88,7 @@
 						"type": "address"
 					}
 				],
-				"name": "NewPriceOracle",
+				"name": "FnsNewPriceOracle",
 				"type": "event"
 			},
 			{
@@ -111,81 +111,41 @@
 				"type": "event"
 			},
 			{
-				"inputs": [],
-				"name": "ADDR_LABEL",
-				"outputs": [
+				"anonymous": false,
+				"inputs": [
 					{
-						"internalType": "bytes32",
-						"name": "",
-						"type": "bytes32"
+						"indexed": false,
+						"internalType": "address",
+						"name": "a",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "b",
+						"type": "address"
 					}
 				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "MIN_REGISTRATION_DURATION",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "RESOLVER_LABEL",
-				"outputs": [
-					{
-						"internalType": "bytes32",
-						"name": "",
-						"type": "bytes32"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "REVERSE_REGISTRAR_LABEL",
-				"outputs": [
-					{
-						"internalType": "bytes32",
-						"name": "",
-						"type": "bytes32"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "TLD_LABEL",
-				"outputs": [
-					{
-						"internalType": "bytes32",
-						"name": "",
-						"type": "bytes32"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
+				"name": "ResolverAddrCompare",
+				"type": "event"
 			},
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "addr",
+				"outputs": [
+					{
 						"internalType": "address",
-						"name": "addr",
+						"name": "",
 						"type": "address"
 					}
 				],
-				"name": "addController",
-				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -327,32 +287,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "maxCommitmentAge",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "minCommitmentAge",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "bytes32",
@@ -379,6 +313,25 @@
 			{
 				"inputs": [],
 				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "ownerOf",
 				"outputs": [
 					{
 						"internalType": "address",
@@ -458,19 +411,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "addr",
-						"type": "address"
-					}
-				],
-				"name": "removeController",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "string",
 						"name": "name",
 						"type": "string"
@@ -520,6 +460,43 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "resolver",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "setAddr",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "_minCommitmentAge",
 						"type": "uint256"
@@ -544,6 +521,24 @@
 					}
 				],
 				"name": "setPriceOracle",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "resolver",
+						"type": "address"
+					}
+				],
+				"name": "setResolver",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -645,6 +640,14 @@
 		"remappings": []
 	},
 	"sources": {
+		"@ensdomains/buffer/contracts/Buffer.sol": {
+			"keccak256": "0xd6dd3b0b327288f8e1b711a609f4040fea602e2ad4bba9febdf2f33b4e56eb0c",
+			"license": "BSD-2-Clause",
+			"urls": [
+				"bzz-raw://78a722152d40d778a97595e5224fac1d138f4e659dcb1a926148909ef4c4bdca",
+				"dweb:/ipfs/QmRxScF53x5ywsChLNpMUCdg2TSoCWTfo8G65Mo3sGY55b"
+			]
+		},
 		"@openzeppelin/contracts/access/Ownable.sol": {
 			"keccak256": "0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673",
 			"license": "MIT",
@@ -734,10 +737,24 @@
 			]
 		},
 		"FnsDeployer.sol": {
-			"keccak256": "0xacebad873d03688484bd87762dc2fbe32062da0d67c6cc0f9075dc1564998005",
+			"keccak256": "0x7a892f1c8f3b44e8a1cbbfc57177169dbe1df17af8623a0200e3ce761e4dae67",
 			"urls": [
-				"bzz-raw://2185fd5019db26ba71db26856dc670c45ee443128fe52477775780e31dd7ea96",
-				"dweb:/ipfs/QmXpRhMCLaeDMvm4UrL1Yfh7P9dJ955mPKnQSu34k9teK8"
+				"bzz-raw://8f89983bdd55eb97dca2a32a530552e965932d5835cfd021489a0dea7b5e5e22",
+				"dweb:/ipfs/QmcB7x1ERZSjVrtookVMmZDn67VLAXHwmMuwLqmXtE3uqV"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/dnssec-oracle/BytesUtils.sol": {
+			"keccak256": "0x83315df2e54c74451577c70da2c267c3459802b08b9aeec6516302eee70f796e",
+			"urls": [
+				"bzz-raw://6c1218a55db95f6ec9370cd7b1d726d5cda5daceaf2867a918faebf0be236bc4",
+				"dweb:/ipfs/QmRXqFRxDuPnEVPDN64wMuP1o57f1dC19Ub73ZKqSqV6Ag"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/dnssec-oracle/RRUtils.sol": {
+			"keccak256": "0x021cc7832a603e41b94d38eced8175452eaa5ab4794376fa3f722362844aeefe",
+			"urls": [
+				"bzz-raw://4a3326979b100c08007195a9f194ed13bdec0accb515bb7f9212ec7b2ec17351",
+				"dweb:/ipfs/QmQzBvyAKLR8xw3cchJnbxCAVaR7irbBco1KkiaJ98P542"
 			]
 		},
 		"ensdomains/ens-contracts/contracts/ethregistrar/BaseRegistrar.sol": {
@@ -796,11 +813,81 @@
 				"dweb:/ipfs/QmVGHjdnsBua2qVEcuA3WEpnexYv4kBfwWSisnskT2Ks43"
 			]
 		},
+		"ensdomains/ens-contracts/contracts/resolvers/OwnedResolver.sol": {
+			"keccak256": "0x755c152ad2b75dbe2d214bda95133173e9c7b55be853369926dd2c51d5f655ab",
+			"urls": [
+				"bzz-raw://cde1ef86b7703575707b70dd5cef8cdefe618a9e2618370c8512d80a534354ec",
+				"dweb:/ipfs/QmTVxayU1Xe6f5AhYRMWoJvBha67umKXMXgxxBQMYBM7ts"
+			]
+		},
 		"ensdomains/ens-contracts/contracts/resolvers/Resolver.sol": {
 			"keccak256": "0x696c3b1e718aad7054ec75bc74b627c2bfea71b32fb1054ee021d0e079388275",
 			"urls": [
 				"bzz-raw://8860ac4ac46d58a68bb44cc92a359ddf65dace312dd7b76da301d740a06b86cb",
 				"dweb:/ipfs/QmZGwtK6gqhaAbQxTV2mRb3pgVZkkG8Vhi5KLiFPbxUT5H"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/ResolverBase.sol": {
+			"keccak256": "0x19ff93130a91ea54f949022dafa27cd9fa9af647820d957aed3c8641b1354d8e",
+			"urls": [
+				"bzz-raw://9b962ff3458e2d77b256d9685fe75c60ce5d3879f5ce6e3fab53117c2ae1e97c",
+				"dweb:/ipfs/QmY9zyep1ntdVpsnpy5W6fzUC5ndBmBoYBTfAiyAWZrKvJ"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/ABIResolver.sol": {
+			"keccak256": "0x371491a137dde6b09a7345f568539e8b4585fb30615d2192ceeeb46d82dc0935",
+			"urls": [
+				"bzz-raw://75f567e1b607869b2bd622560565748d1ec430fed55350d0b9344d2fe2352ec0",
+				"dweb:/ipfs/Qma4r138Y1ybcDa4Hv6MgxXZsYzUsHnEjCtouSc4Agh8jQ"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/AddrResolver.sol": {
+			"keccak256": "0x5e32ad40c831931e1d1cba27622078fd8a838227ed23d2bba253e1256e8f331a",
+			"urls": [
+				"bzz-raw://ca4fb5848a6a75cc1461f876e724c20a88615bd169b8f3647028f0de300c3ef3",
+				"dweb:/ipfs/QmV12vK1dYc2k8BgNGWtYsbfxpwdqfkVaGfXvbv6Hn65i4"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/ContentHashResolver.sol": {
+			"keccak256": "0x46f179cc9a316da02c1c568b6c701b42409c144116e56ea4534b642326379a6b",
+			"urls": [
+				"bzz-raw://de2ea713088244ace05e254df4ea13c6558e4834f765ce2228e64a128ff12766",
+				"dweb:/ipfs/QmWPM6Xa9eZNtEA6WqUpzARswYuS6izRf3hEoGQDDWYF44"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/DNSResolver.sol": {
+			"keccak256": "0x4d74aef492a44a29ea8757a6148740413a8c8f1256ce8d4551c89bdc2d91e0b1",
+			"urls": [
+				"bzz-raw://9351d11b2acddd3398e88c77dad8ce8612aabc4926c633a2b96dc0bf46316963",
+				"dweb:/ipfs/QmaVw41ZsP9DCtLRMPFXjqWbXj6tT9BKJsKMSE8e6KU7Ei"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/InterfaceResolver.sol": {
+			"keccak256": "0x4e06e3117df99a3f6ec7fb00ec542a78d31ffdb19bbaa96b2c96c339f23ae65b",
+			"urls": [
+				"bzz-raw://abd9bc56c4c72787fd26adfde7b4483c9112e61dda22ece6fff0f1b58d74114f",
+				"dweb:/ipfs/QmT93qDoQjTbLX3pJP2w3je4F7Mkkr3ZifefCGxDKtn2DV"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/NameResolver.sol": {
+			"keccak256": "0x49a44703212e1f5770fbe57dfa2d36806417eb74796af6956b25cbb6121f3f61",
+			"urls": [
+				"bzz-raw://a849d3ceaba89a487a1c6da670fa1cedf004796fec039d0d47409de2e2db5aed",
+				"dweb:/ipfs/QmZmXT1xSkg2zgzYRgUqHgdjECtz5Y8fuwgdqg6aXxgnfb"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/PubkeyResolver.sol": {
+			"keccak256": "0xc055d31c586552cb87de93a6c2b0e36e9b8671a117a1a76fc1a795c6237e5b06",
+			"urls": [
+				"bzz-raw://0ea828bf45ab6c0bf81af0fb51b4771ff1830c63df4da9050340c6b230e4e59b",
+				"dweb:/ipfs/QmPKxEGdPt7PX7DprEVUkttfzKKpycm5DfYvQcbEGRaibX"
+			]
+		},
+		"ensdomains/ens-contracts/contracts/resolvers/profiles/TextResolver.sol": {
+			"keccak256": "0x22ef36660cc42fbccfc8820bee1ec3f2cfac6f8f6cf61fa3ab585e8456557cb2",
+			"urls": [
+				"bzz-raw://a3d74553ac6594b205a7f2f6917552975b198f25e65fd77f5258760c6f2bf9ce",
+				"dweb:/ipfs/QmZP65AwjCjFYx76DepdjaqEbNAQFPbjXZghNHhLFbvDTF"
 			]
 		}
 	},
